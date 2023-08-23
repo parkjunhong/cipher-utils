@@ -173,7 +173,7 @@ public class CipherUtils {
                 encryp(key, data);
                 break;
             case METHOD_DECRYPT:
-                encryp(key, data);
+                decryp(key, data);
                 break;
             default:
                 // unreachable code
