@@ -113,7 +113,7 @@ public class CipherUtils {
 
     public static void main(String[] args) {
 
-        if (args == null || args.length < 4) {
+        if (args == null || args.length < 6) {
             System.out.println("올바르지 않은 정보입니다. 입력=" + (args == null ? "" : Arrays.toString(args)));
             help();
             System.exit(0);
@@ -139,22 +139,22 @@ public class CipherUtils {
                 default:
                     switch (lastArg) {
                         case LAST_FLAG_METHOD:
-                            method = args[i];
-                            break;
-                        case LAST_FLAG_KEY:
-                            key = args[i];
-                            break;
-                        case LAST_FLAG_DATA:
                             switch (args[i]) {
                                 case METHOD_ENCRYPT:
                                 case METHOD_DECRYPT:
-                                    data = args[i];
+                                    method = args[i];
                                     break;
                                 default:
                                     help();
                                     System.exit(0);
                                     break;
                             }
+                            break;
+                        case LAST_FLAG_KEY:
+                            key = args[i];
+                            break;
+                        case LAST_FLAG_DATA:
+                            data = args[i];
                             break;
                     }
                     lastArg = LAST_DATA;
