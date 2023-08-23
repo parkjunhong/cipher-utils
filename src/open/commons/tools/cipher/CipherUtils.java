@@ -81,7 +81,7 @@ public class CipherUtils {
             byte[] decodedPwd = Base64.getDecoder().decode(data);
             String plainText = EncryptUtils.decrypt(key, decodedPwd);
 
-            System.out.println("decrpted result= " + decodedPwd);
+            System.out.println("decrpted result= " + plainText);
 
         } catch (InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException | UnsupportedEncodingException | InvalidAlgorithmParameterException
                 | IllegalBlockSizeException | BadPaddingException e) {
