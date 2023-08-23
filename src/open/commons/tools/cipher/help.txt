@@ -1,0 +1,9 @@
+
+[Usage]
+java -jar cipher-utils.jar -m <method> -k <ciper key> -d <data>
+
+[Options]
+-m: encrypt or decrypt. One of [ enc | dec ].
+-k: cipher key. (minimal length: 16)
+-d: data
+
