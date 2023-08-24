@@ -78,10 +78,13 @@ public class CipherUtils {
 
     private static void decryp(String key, String data) {
         try {
-            byte[] decodedPwd = Base64.getDecoder().decode(data);
-            String plainText = EncryptUtils.decrypt(key, decodedPwd);
+            byte[] decodedData = Base64.getDecoder().decode(data);
+            String plainText = EncryptUtils.decrypt(key, decodedData);
 
-            System.out.println("decrpted result= " + plainText);
+            System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
+            System.out.println("Encrypted Text: " + data);
+            System.out.println("Plaint Text   : " + plainText);
+            System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
 
         } catch (InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException | UnsupportedEncodingException | InvalidAlgorithmParameterException
                 | IllegalBlockSizeException | BadPaddingException e) {
@@ -91,9 +94,13 @@ public class CipherUtils {
 
     private static void encryp(String key, String data) {
         try {
-            byte[] encryptedPwd = EncryptUtils.encrypt(key, data);
-            String encodedPwd = new String(Base64.getEncoder().encode(encryptedPwd));
-            System.out.println("encrypted result= " + encodedPwd);
+            byte[] encryptedData = EncryptUtils.encrypt(key, data);
+            String encodedData = new String(Base64.getEncoder().encode(encryptedData));
+
+            System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
+            System.out.println("Plaint Text   : " + data);
+            System.out.println("Encrypted Text: " + encodedData);
+            System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
 
         } catch (InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException | UnsupportedEncodingException | InvalidAlgorithmParameterException
                 | IllegalBlockSizeException | BadPaddingException e) {
