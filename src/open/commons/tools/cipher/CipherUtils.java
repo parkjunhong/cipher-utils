@@ -80,11 +80,7 @@ public class CipherUtils {
         try {
             byte[] decodedData = Base64.getDecoder().decode(data);
             String plainText = EncryptUtils.decrypt(key, decodedData);
-
-            System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
-            System.out.println("Encrypted Text: " + data);
-            System.out.println("Plaint Text   : " + plainText);
-            System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
+            System.out.print(plainText);
 
         } catch (InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException | UnsupportedEncodingException | InvalidAlgorithmParameterException
                 | IllegalBlockSizeException | BadPaddingException e) {
@@ -96,11 +92,7 @@ public class CipherUtils {
         try {
             byte[] encryptedData = EncryptUtils.encrypt(key, data);
             String encodedData = new String(Base64.getEncoder().encode(encryptedData));
-
-            System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
-            System.out.println("Plaint Text   : " + data);
-            System.out.println("Encrypted Text: " + encodedData);
-            System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
+            System.out.print(encodedData);
 
         } catch (InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException | UnsupportedEncodingException | InvalidAlgorithmParameterException
                 | IllegalBlockSizeException | BadPaddingException e) {
