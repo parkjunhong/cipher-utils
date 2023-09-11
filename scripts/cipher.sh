@@ -7,9 +7,9 @@ help(){
     echo "cipher.sh <type> <key> <data>"
     echo
     echo "[Parameters]"
-    echo "- type: 암호화/복호와 여부. [e|d]"
-    echo "        - e(nc): 암호화"
-    echo "        - d(ec): 복호화"
+    echo "- type: 암호화/복호와 여부. [enc|dec]"
+    echo "        - enc: 암호화"
+    echo "        - dec: 복호화"
     echo "- key: 암호화에 사용될 키. (16Bytes 이상)"
     echo "- data: 암호화할 데이터".
 }
